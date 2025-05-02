@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="inputBox" readonly placeholder="Enter To Calculate">
+        <div class="button-group">
+            <button onclick="clearAll(this)" >C</button>
+            <button onclick="addNums(this)" class="arithmeti">/</button>
+            <button onclick="backSp()">B</button>
+            <button onclick="addNums(this)" class="arithmeti">*</button>
+            <button onclick="addNums(this)" class="arithmeti">-</button>
+            <button onclick="addNums(this)" class="arithmeti">+</button>
+            <button onclick="addNums(this)">7</button>
+            <button onclick="addNums(this)">8</button>
+            <button onclick="addNums(this)">9</button>
+            <button onclick="addNums(this)">4</button>
+            <button onclick="addNums(this)">5</button>
+            <button onclick="addNums(this)">6</button>
+            <button onclick="addNums(this)">1</button>
+            <button onclick="addNums(this)">2</button>
+            <button onclick="addNums(this)">3</button>
+            <button onclick="addNums(this)">.</button>
+            <button onclick="addNums(this)">0</button>
+            <button onclick="showResult(this)">=</button>
+        </div>
+        <!-- this in every function takes the refernece of that element which is passed as argument -->
+    </div>
+
+    <script>
+        
+        let valueCollect = "";
+        console.log("valueCollect global: "+valueCollect); //
+        let inputBox = document.querySelector("#inputBox");
+        
+
+        function addNums(e){ //here it is taken as element "e" here is whole element
+            let elemText = e.innerText;
+
+            inputBox.value += elemText;
+            valueCollect += elemText;
+        }
+
+        function showResult(){
+            // inputBox.value += "="+eval(valueCollect)
+            inputBox.value = eval(valueCollect)
+        }
+        
+        function clearAll(){
+            inputBox.value="";
+            valueCollect="";
+        }
+
+        function backSp(){
+            inputBox.value = inputBox.value.slice(0, -1);
+            valueCollect = valueCollect.slice(0,-1);
+            //slice(startPostion, endPostion) endPostion is exclusive
+            //extract the portion of string
+        }
+        
+    </script>
+</body>
+</html>

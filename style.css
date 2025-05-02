@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(255, 174, 0);
+}
+.calculator{
+    border: 5px solid rgb(255, 136, 0);
+    border-width: 5px;
+    width: 300px;
+    margin: 50px auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 10px 5px rgb(180, 119, 4);
+}
+
+.calculator input{
+    outline: none;
+    /* border: 3px solid rgb(255, 255, 255); */
+    border: none;
+    border-radius: 5px;
+    /* height: 80px; */
+    text-align: right;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(75, 74, 74);
+    padding-right: 10px;
+    margin-bottom: 5px;
+    /* text-align: center; */
+    /* margin: 0 auto; */
+    width: 100%;
+    height: 50px;
+    cursor: auto;
+    background-color: rgb(255, 174, 0);
+}
+.calculator input::placeholder{
+    text-align: center;
+    font-weight: normal;
+    color: rgb(172, 114, 6);
+    /* font-family: cursive; */
+}
+
+
+.calculator .button-group{
+    display: grid;
+    /* grid-template-rows: auto auto auto; */
+    grid-template-columns:auto auto auto ; 
+    grid-gap :3px;
+
+
+}
+
+.calculator .button-group button{
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: rgb(231, 201, 8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.calculator .button-group button:hover{
+    transform: scale(1.04);
+    box-shadow: 0 1px 2px 0px rgb(234, 160, 0);
+
+}
+
+.calculator .button-group  button[onclick="clearAll(this)"]{
+    background-color: red;
+}
+.calculator .button-group  button[onclick="backSpace(this)"]{
+    background-color: rgb(255, 140, 0);
+}
+.calculator .button-group  button[onclick="showResult(this)"]{
+    background-color: rgb(15, 176, 7);
+}
+
+.calculator .button-group  .arithmeti{
+    background-color: rgb(255, 174, 0);
+    font-size: 25px;
+    /* color: orange; */
+}
